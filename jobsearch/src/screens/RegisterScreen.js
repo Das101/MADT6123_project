@@ -4,18 +4,27 @@ import colors from '../helper/colors';
 
 const { width, height } = Dimensions.get('window');
 
-const LoginScreen = ({ navigation }) => {
+const RegisterScreen = () => {
+    const [fullname, setFullName] = useState('');
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 
-	const handleLogin = () => {
+	const handleRegister = () => {
 
 	};
 
 	return (
 		<View style={styles.container}>
 			<View style={styles.centerView}>
-				<Text style={styles.title}>Log in</Text>
+				<Text style={styles.title}>Register</Text>
+                <View style={styles.inputView}>
+					<TextInput
+						style={styles.input}
+						placeholder="Full Name"
+						value={fullname}
+						onChangeText={setFullName}
+					/>
+				</View>
 				<View style={styles.inputView}>
 					<TextInput
 						style={styles.input}
@@ -33,16 +42,12 @@ const LoginScreen = ({ navigation }) => {
 						secureTextEntry={true}
 					/>
 				</View>
-				<TouchableOpacity onPress={handleLogin} style={styles.forgotButton}>
-					<Text style={styles.forgotText}>Forgot Password?</Text>
+				
+				<TouchableOpacity style={styles.button} onPress={handleRegister}>
+					<Text style={styles.buttonText}>Register</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.button} onPress={handleLogin}>
-					<Text style={styles.buttonText}>LOGIN</Text>
-				</TouchableOpacity>
-				<TouchableOpacity 
-					onPress={() => navigation.navigate('Register')} 
-						style={styles.registerButton}>
-					<Text>New Here? </Text><Text style={styles.forgotText}>Register</Text>
+				<TouchableOpacity onPress={handleRegister} style={styles.registerButton}>
+					<Text>Already Member? </Text><Text style={styles.forgotText}>Login</Text>
 				</TouchableOpacity>
 			</View>
 
@@ -64,7 +69,7 @@ const styles = StyleSheet.create({
 		fontWeight: 'bold',
 		marginBottom: 20,
 		color: colors.primary,
-		marginLeft: -width * 0.55
+		marginLeft: -width * 0.48
 	},
 	centerView: {
 		width: width * 0.8,
@@ -93,11 +98,6 @@ const styles = StyleSheet.create({
 		shadowRadius: 5,
 		elevation: 4,
 		marginVertical: 10
-	},
-	forgotButton: {
-		width: width * 0.7,
-		alignItems: 'flex-end',
-		marginVertical: 6
 	},
 	forgotText: {
 		color: colors.black,
@@ -132,4 +132,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default LoginScreen;
+export default RegisterScreen;
