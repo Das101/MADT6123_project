@@ -9,7 +9,7 @@ const LoginScreen = ({ navigation }) => {
 	const [password, setPassword] = useState('');
 
 	const handleLogin = () => {
-
+		navigation.navigate('BottomStack')
 	};
 
 	return (
