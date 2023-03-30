@@ -4,18 +4,14 @@ import colors from '../helper/colors';
 
 const { width, height } = Dimensions.get('window');
 
-const LoginScreen = ({ navigation }) => {
+const ForgotPassword = ({ navigation }) => {
 	const [email, setEmail] = useState('');
-	const [password, setPassword] = useState('');
-
-	const handleLogin = () => {
-
-	};
 
 	return (
 		<View style={styles.container}>
 			<View style={styles.centerView}>
-				<Text style={styles.title}>Log in</Text>
+				<Text style={styles.title}>Forgot Your Password?</Text>
+                <Text style={styles.semiTitle}>Enter your email address to retrive your password</Text>
 				<View style={styles.inputView}>
 					<TextInput
 						style={styles.input}
@@ -24,25 +20,9 @@ const LoginScreen = ({ navigation }) => {
 						onChangeText={setEmail}
 					/>
 				</View>
-				<View style={styles.inputView}>
-					<TextInput
-						style={styles.input}
-						placeholder="Password"
-						value={password}
-						onChangeText={setPassword}
-						secureTextEntry={true}
-					/>
-				</View>
-				<TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')} style={styles.forgotButton}>
-					<Text style={styles.forgotText}>Forgot Password?</Text>
-				</TouchableOpacity>
-				<TouchableOpacity style={styles.button} onPress={handleLogin}>
-					<Text style={styles.buttonText}>LOGIN</Text>
-				</TouchableOpacity>
-				<TouchableOpacity 
-					onPress={() => navigation.navigate('Register')} 
-						style={styles.registerButton}>
-					<Text>New Here? </Text><Text style={styles.forgotText}>Register</Text>
+				
+				<TouchableOpacity style={styles.button}>
+					<Text style={styles.buttonText}>CONFIRM</Text>
 				</TouchableOpacity>
 			</View>
 
@@ -63,12 +43,11 @@ const styles = StyleSheet.create({
 		fontSize: 24,
 		fontWeight: 'bold',
 		marginBottom: 20,
-		color: colors.primary,
-		marginLeft: -width * 0.55
+		color: colors.primary
 	},
 	centerView: {
 		width: width * 0.8,
-		height: width * 0.9,
+		height: width * 0.7,
 		alignItems: 'center',
 		justifyContent: 'center',
 		alignContent: 'center',
@@ -94,15 +73,10 @@ const styles = StyleSheet.create({
 		elevation: 4,
 		marginVertical: 10
 	},
-	forgotButton: {
-		width: width * 0.7,
-		alignItems: 'flex-end',
-		marginVertical: 6
-	},
-	forgotText: {
+	semiTitle: {
 		color: colors.black,
 		fontSize: 16,
-		fontWeight: 'bold',
+		marginBottom: 5
 	},
 	button: {
 		backgroundColor: colors.primary,
@@ -113,7 +87,7 @@ const styles = StyleSheet.create({
 		elevation: 4,
 		alignItems: 'center',
 		padding: 10,
-		marginVertical: 10,
+		marginTop: 20,
 		width: width * 0.7,
 		height: width * 0.12,
 	},
@@ -132,4 +106,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default LoginScreen;
+export default ForgotPassword;
