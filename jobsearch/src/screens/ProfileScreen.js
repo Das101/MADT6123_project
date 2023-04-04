@@ -74,13 +74,12 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 24,
         fontWeight: 'bold',
-        marginBottom: 20,
+        marginBottom: 10,
         color: colors.primary,
-        marginLeft: -width * 0.48,
     },
     centerView: {
         width: width * 0.8,
-        height: width * 0.9,
+        height: width ,
         alignItems: 'center',
         justifyContent: 'center',
         alignContent: 'center',
