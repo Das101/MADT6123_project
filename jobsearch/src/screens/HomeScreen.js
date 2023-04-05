@@ -69,23 +69,10 @@ const HomeScreen = () => {
                 />
                 <Text style={styles.itemLocationText}>{item.location}</Text>
             </View>
-            <View style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                marginHorizontal: 20,
-                marginVertical: 10
-            }}>
+            <View style={styles.typeView}>
                 {item.type.map(type_data => (
-                    <View style={{ 
-                        backgroundColor: colors.primary,
-                        padding: 6,
-                        borderRadius: 8,
-                        marginHorizontal: 5
-                    }}>
-                    <Text style={{
-                        color: colors.white, 
-                        marginHorizontal: 4
-                    }}>{type_data}</Text>
+                    <View style={styles.typeTextView}>
+                    <Text style={styles.jobtypeText}>{type_data}</Text>
                     </View>
                 ))}
             </View>
@@ -221,6 +208,22 @@ const styles = StyleSheet.create({
         fontSize: 15,
         fontWeight: 'bold',
         color: colors.secondary
+    },
+    typeView: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginHorizontal: 20,
+        marginVertical: 10
+    },
+    typeTextView: { 
+        backgroundColor: colors.primary,
+        padding: 6,
+        borderRadius: 8,
+        marginHorizontal: 5
+    },
+    jobtypeText: {
+        color: colors.white, 
+        marginHorizontal: 4
     }
 });
 
